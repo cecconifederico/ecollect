@@ -1,6 +1,6 @@
 library(stringr)
 tempo = 5
-h <- hstream
+# h <- hstream
 # hash_results <- list()
 
 for (j in c(1:length(h))){
