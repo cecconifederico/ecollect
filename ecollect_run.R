@@ -7,8 +7,8 @@ hash_results <- list()
 for (tempo in c(1:1)){
   
   print("inizia streaming")
-  rt <- stream_tweets(geocode = "41.89,12.51,10km", timeout = 30)
-  # rt <- stream_tweets(geocode = c(41.89,12.51,42.00,13.00), timeout = 15)
+  rt <- search_tweets(geocode = "41.89,12.51,1mi",n = 500)
+  # rt <- stream_tweets(geocode = c(41.89,12.51,42.00,13.00), timeout = 15,)
   i <- 1
   for (j in rt$geo_coords){
     if (!is.na(j[1])){
