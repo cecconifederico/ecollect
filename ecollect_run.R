@@ -1,22 +1,14 @@
+library(stringr)
 hash_results <- list()
 
 # hash_results (#a:[1,1],#b:[1,1],#a:[3,2])
 # [1,4] significa 1 occorrenza al tempo 4
 
 
-for (tempo in c(1:1)){
+for (tempo in c(1:50)){
   
   print("inizia streaming")
   rt <- search_tweets(geocode = "41.89,12.51,1mi",n = 500)
-  # rt <- stream_tweets(geocode = c(41.89,12.51,42.00,13.00), timeout = 15,)
-  i <- 1
-  for (j in rt$geo_coords){
-    if (!is.na(j[1])){
-      print(i)
-    }
-    i <- i + 1
-  }
-  
   
   h <- rt$hashtags
   
@@ -67,5 +59,7 @@ for (tempo in c(1:1)){
   }
   
   print("Inizia attesa")
-  Sys.sleep(time=10) 
+  Sys.sleep(time=1800) 
 }
+
+save(file = "hashresults.rdata", hash_results)
