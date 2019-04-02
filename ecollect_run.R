@@ -5,10 +5,10 @@ hash_results <- list()
 # [1,4] significa 1 occorrenza al tempo 4
 
 
-for (tempo in c(1:50)){
+for (tempo in c(1:100)){
   
   print("inizia streaming")
-  rt <- search_tweets(geocode = "41.89,12.51,1mi",n = 500)
+  rt <- search_tweets(geocode = "41.89,12.51,50mi",n = 500)
   
   h <- rt$hashtags
   
@@ -59,7 +59,7 @@ for (tempo in c(1:50)){
   }
   
   print("Inizia attesa")
-  Sys.sleep(time=1800) 
+  Sys.sleep(time=3600) 
 }
 
-save(file = "hashresults.rdata", hash_results)
+save(file = "hashresults04.rdata", hash_results)
