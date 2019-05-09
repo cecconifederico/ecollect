@@ -1,0 +1,1 @@
+cluster <- read.csv("cluster.csv",sep=",",header=TRUE)
